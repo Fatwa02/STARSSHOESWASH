@@ -398,7 +398,7 @@ function renderStampGrid(stamps) {
       if (filled) {
         slot.className = 'aspect-square rounded-full border-2 border-primary bg-white flex items-center justify-center stamp-active transition-transform hover:scale-105';
         const img = document.createElement('img');
-        img.className = 'w-16 h-16 sm:w-20 sm:h-20 object-contain';
+        img.className = 'w-20 h-20 sm:w-20 sm:h-20 object-contain';
         img.src = '/logo.jpeg';
         img.alt = 'stamp';
         img.onerror = function() { this.outerHTML = '<span class="material-symbols-outlined text-4xl text-primary">stars</span>'; };
