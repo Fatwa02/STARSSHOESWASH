@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="id" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Loyalty Card - STARSSHOESWASH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#151b29",
+                    "surface-container": "#e9edff",
+                    "on-error-container": "#93000a",
+                    "surface": "#faf8ff",
+                    "primary-fixed-dim": "#b8c3ff",
+                    "on-tertiary-container": "#95989b",
+                    "secondary": "#bc0001",
+                    "on-secondary-container": "#fffbff",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#ffb4a8",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#e0e3e6",
+                    "on-secondary-fixed": "#410000",
+                    "inverse-surface": "#2a303f",
+                    "inverse-primary": "#b8c3ff",
+                    "background": "#faf8ff",
+                    "secondary-container": "#e22619",
+                    "tertiary": "#181b1e",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "on-tertiary-fixed": "#191c1e",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#e2e8fc",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f1f3ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#dde2f6",
+                    "on-primary-container": "#8794d4",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#dde1ff",
+                    "on-primary-fixed": "#04154f",
+                    "outline": "#767681",
+                    "surface-bright": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#edf0ff",
+                    "on-primary-fixed-variant": "#36437d",
+                    "primary-container": "#1d2b64",
+                    "secondary-fixed": "#ffdad4",
+                    "primary": "#03144f",
+                    "on-surface": "#151b29",
+                    "surface-variant": "#dde2f6",
+                    "tertiary-fixed-dim": "#c4c7ca",
+                    "surface-tint": "#4e5b96",
+                    "tertiary-container": "#2d3033",
+                    "outline-variant": "#c6c5d1",
+                    "surface-dim": "#d4d9ed",
+                    "on-surface-variant": "#454650",
+                    "on-secondary-fixed-variant": "#930000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "16px",
+                    "container-max": "1200px",
+                    "xs": "8px",
+                    "md": "24px",
+                    "base": "4px",
+                    "gutter": "20px",
+                    "lg": "40px",
+                    "xl": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-xl": ["Hanken Grotesk"],
+                    "body-md": ["Work Sans"],
+                    "body-lg": ["Work Sans"],
+                    "label-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .stamp-shadow {
+            box-shadow: inset 0 2px 4px rgba(3, 20, 79, 0.1);
+        }
+        .stamp-active {
+            filter: drop-shadow(0 2px 4px rgba(188, 0, 1, 0.3));
+            transform: rotate(-12deg);
+        }
+        @keyframes subtle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .float-animation {
+            animation: subtle-float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopAppBar -->
+<header class="bg-primary shadow-md sticky top-0 z-50">
+<div class="flex justify-between items-center px-md py-sm w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-xs">
+<img alt="STARSSHOESWASH Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRE9tomzSFmczxGgDwIqhn0SLzNA_y8BIITMpwxj3B8K42c8DXqcVbEpvUhxx6AUSmEcVWDqa4SQ9TeZ-XoRJHWHjKlzMyrS3hxI-J8fKoOU1OcjdFJgjRvzkEoLytzRHGusEIipajOZC7FBnfy4snZ50B8jBT35hT4MngIfwRZbubCWjKkU7G_K0GpL3b4f-LvwlL_6dMJdonePqmuf356WBmkUC9uygPwXA2nG7xFjLKGFuUf73ZQFus3A2a9eeiBhg1zSMbYnc">
+<h1 class="text-on-primary font-headline-md text-headline-md tracking-tighter">STARSSHOESWASH</h1>
+</div>
+<button class="text-on-primary hover:bg-primary-container/20 p-xs transition-colors rounded-full flex items-center">
+
+</button>
+</div>
+</header>
+<main class="max-w-md mx-auto min-h-screen px-sm py-lg space-y-md">
+<!-- Search Section -->
+<section class="space-y-sm">
+<div class="relative group">
+<label class="font-label-lg text-label-lg text-primary block mb-base" for="name-search">Cek Status Loyality Anda</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-outline" data-icon="person">person</span>
+<input class="w-full pl-[48px] pr-sm py-md border-outline-variant border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all bg-white" id="name-search" placeholder="Cari nama Anda..." type="text">
+</div>
+
+</div>
+</section>
+<!-- Loyalty Card Container -->
+<section class="relative bg-white rounded-xl border border-primary/10 overflow-hidden shadow-md float-animation">
+<!-- Loyalty Banner -->
+<div class="bg-primary text-on-primary py-md px-lg text-center">
+<h2 class="font-headline-xl text-headline-xl tracking-tight leading-none uppercase">LOYALiTY CARD</h2>
+</div>
+<!-- Content Area -->
+<div class="p-md space-y-lg">
+<!-- Branding Header -->
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<p class="font-label-lg text-label-lg text-primary opacity-60">NAMA</p>
+<p class="font-headline-md text-headline-md text-primary">ANDI KUSUMA</p>
+</div>
+<div class="text-right">
+
+
+</div>
+</div>
+<!-- Stamp Grid -->
+<div class="grid grid-cols-5 gap-sm py-sm">
+<!-- Slot 1 (Filled) -->
+<div class="aspect-square rounded-full border border-primary flex items-center justify-center bg-secondary stamp-active">
+<span class="text-on-secondary font-bold text-[10px] leading-tight text-center">STAMP<br>COLLECTED</span>
+</div>
+<!-- Slot 2 (Filled) -->
+<div class="aspect-square rounded-full border border-primary flex items-center justify-center bg-secondary stamp-active">
+<span class="text-on-secondary font-bold text-[10px] leading-tight text-center">STAMP<br>COLLECTED</span>
+</div>
+<!-- Slot 3 (Reward) -->
+<div class="aspect-square rounded-full border border-primary flex items-center justify-center bg-secondary stamp-active">
+<span class="text-on-secondary font-bold text-[10px] leading-tight text-center">DISCOUNT<br>5%</span>
+</div>
+<!-- Slot 4 (Empty) -->
+<div class="aspect-square rounded-full border border-primary flex items-center justify-center bg-surface-container-lowest stamp-shadow">
+<div class="w-2 h-2 bg-primary/20 rounded-full"></div>
+</div>
+<!-- Slot 5 (Reward) -->
+<div class="aspect-square rounded-full border-2 border-dashed border-secondary flex items-center justify-center bg-white opacity-80">
+<span class="text-secondary font-bold text-[8px] leading-tight text-center">FREE<br>PARFUME</span>
+</div>
+<!-- Row 2 -->
+<!-- Slot 6 (Empty) -->
+<div class="aspect-square rounded-full border border-primary flex items-center justify-center bg-surface-container-lowest stamp-shadow">
+<div class="w-2 h-2 bg-primary/20 rounded-full"></div>
+</div>
+<!-- Slot 7 (Reward) -->
+<div class="aspect-square rounded-full border-2 border-dashed border-secondary flex items-center justify-center bg-white">
+<span class="text-secondary font-bold text-[10px] leading-tight text-center">DISCOUNT<br>5%</span>
+</div>
+<!-- Slot 8 (Empty) -->
+<div class="aspect-square rounded-full border border-primary flex items-center justify-center bg-surface-container-lowest stamp-shadow">
+<div class="w-2 h-2 bg-primary/20 rounded-full"></div>
+</div>
+<!-- Slot 9 (Empty) -->
+<div class="aspect-square rounded-full border border-primary flex items-center justify-center bg-surface-container-lowest stamp-shadow">
+<div class="w-2 h-2 bg-primary/20 rounded-full"></div>
+</div>
+<!-- Slot 10 (Final Reward) -->
+<div class="aspect-square rounded-full border-2 border-secondary flex items-center justify-center bg-white">
+<span class="text-secondary font-extrabold text-[10px] leading-tight text-center">FREE<br>WASH</span>
+</div>
+</div>
+<!-- Footer Text Indonesian -->
+<div class="pt-md border-t border-outline-variant text-center">
+<p class="font-body-md text-body-md text-on-surface-variant italic"><span style="font-style: normal; text-align: start; background-color: rgb(241, 243, 255);" class="">Kumpulkan tanda (stamp) setiap kali Anda menggunakan jasa pencucian kami. Dapatkan diskon langsung dan layanan gratis sebagai apresiasi atas kepercayaan Anda pada STARSSHOESWASH.</span></p>
+</div>
+</div>
+<!-- Decorative Asset (Simulating the blue splash from reference) -->
+<div class="absolute -right-16 top-1/2 -translate-y-1/2 w-32 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+</section>
+<!-- Info Section -->
+<section class="grid grid-cols-1 gap-sm">
+<div class="bg-surface-container-low p-md rounded-lg flex items-center gap-md">
+<div class="bg-primary rounded-full p-sm text-on-primary">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Penawaran Eksklusif</h3>
+<p class="text-body-md text-on-surface-variant">Selesaikan 10 langkah cuci untuk mendapatkan layanan premium gratis.</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-md rounded-lg flex items-center gap-md">
+<div class="bg-secondary rounded-full p-sm text-on-secondary">
+<span class="material-symbols-outlined" data-icon="phone_enabled">phone_enabled</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">0888-9023-291</h3>
+<p class="text-body-md text-on-surface-variant">Hubungi kami untuk antar-jemput sepatu Anda.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant mt-xl">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg py-md w-full max-w-container-max mx-auto space-y-sm md:space-y-0">
+<div class="text-center md:text-left">
+<p class="font-headline-sm text-headline-sm font-bold text-primary mb-base">STARSSHOESWASH</p>
+
+</div>
+<nav class="flex gap-md">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Us</a>
+</nav>
+</div>
+</footer>
+<script>
+        // Micro-interaction for search input focus
+        const searchInput = document.getElementById('name-search');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.01]');
+            searchInput.parentElement.style.transition = 'all 0.2s ease-in-out';
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.01]');
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body></html>

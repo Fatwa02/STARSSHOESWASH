@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STARSSHOESWASH | Admin Dashboard</title>
+<!-- Google Fonts: Hanken Grotesk for headlines, Work Sans for body -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c6c5d1",
+                        "on-surface-variant": "#454650",
+                        "primary-fixed-dim": "#b8c3ff",
+                        "primary-fixed": "#dde1ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "tertiary-fixed-dim": "#c4c7ca",
+                        "primary": "#03144f",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#36437d",
+                        "on-primary-fixed": "#04154f",
+                        "on-tertiary-container": "#95989b",
+                        "inverse-on-surface": "#edf0ff",
+                        "surface-tint": "#4e5b96",
+                        "inverse-surface": "#2a303f",
+                        "surface-container-highest": "#dde2f6",
+                        "surface-container": "#e9edff",
+                        "surface-container-low": "#f1f3ff",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdad4",
+                        "secondary": "#bc0001",
+                        "secondary-fixed-dim": "#ffb4a8",
+                        "tertiary-fixed": "#e0e3e6",
+                        "surface": "#faf8ff",
+                        "on-primary-container": "#8794d4",
+                        "background": "#faf8ff",
+                        "outline": "#767681",
+                        "secondary-container": "#e22619",
+                        "on-tertiary-fixed-variant": "#44474a",
+                        "on-tertiary-fixed": "#191c1e",
+                        "tertiary-container": "#2d3033",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#410000",
+                        "on-background": "#151b29",
+                        "tertiary": "#181b1e",
+                        "surface-bright": "#faf8ff",
+                        "on-secondary-fixed-variant": "#930000",
+                        "inverse-primary": "#b8c3ff",
+                        "primary-container": "#1d2b64",
+                        "surface-container-high": "#e2e8fc",
+                        "surface-variant": "#dde2f6",
+                        "surface-dim": "#d4d9ed",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#151b29",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "md": "24px",
+                        "xs": "8px",
+                        "xl": "64px",
+                        "container-max": "1200px",
+                        "gutter": "20px",
+                        "lg": "40px",
+                        "sm": "16px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Work Sans"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-md": ["Work Sans"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-xl": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .stamp-active {
+            font-variation-settings: 'FILL' 1;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #03144f;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-primary shadow-md">
+<div class="flex justify-between items-center px-md py-sm w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-sm">
+<img alt="STARSSHOESWASH logo" class="w-10 h-10 rounded-full border-2 border-on-primary object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHjIgR4CMjPOYDoHm52Sj5RDUAi6SmiDf429qDlG5aQqsZJJLv0DGduhlRDdV-Q5IaD5KNfzOIPMLDvg1MPbhShQ8mlB0qOFw9Zsvr1lTABvZkLXhr1bHqCeevYiRz2qppj2-fNmlYetFwkvyDiOKUX2ss8qiQWgeSJD-wUI1ERPQFfY6h4G0iHN66_2oVTB6adrUczot4movI2RhFhWXS9gVGkZD47JtRsDSUVh5YBHIaJc9OSNGCgPmzoDSLIOZGPLDtftT7zq4"/>
+<h1 class="text-headline-md font-headline-md font-bold tracking-tighter text-on-primary">STARSSHOESWASH</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex items-center gap-sm">
+<button class="text-on-primary opacity-80 hover:opacity-100 transition-opacity flex items-center gap-xs">
+</button>
+<button class="text-on-primary border-b-2 border-secondary font-label-lg text-label-lg px-xs py-1 flex items-center gap-xs">
+<span class="material-symbols-outlined">group</span>
+<span class="">Customers</span>
+</button>
+</div>
+<button class="text-on-primary hover:bg-primary-container/20 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary flex items-center justify-center font-bold text-xs ring-2 ring-primary-container">
+                    AD
+                </div>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-sm md:px-md py-md min-h-[calc(100vh-140px)]">
+<!-- Header Actions -->
+<div class="flex flex-col gap-md mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Customer Registry</h2>
+<p class="text-on-surface-variant font-body-md">Manage loyality stamps and track customer progress.</p>
+</div>
+<div class="bg-white border border-outline-variant p-sm rounded-lg flex items-center gap-sm shadow-sm h-12 w-full">
+<div class="w-8 h-8 bg-surface-container-low rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-sm">groups</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[10px] font-label-sm text-on-surface-variant uppercase tracking-wider leading-none">Total Customers</p>
+<p class="text-label-lg font-bold text-primary leading-none">1,284</p>
+</div>
+</div><button class="flex items-center justify-center gap-xs bg-primary text-on-primary px-md py-sm rounded-lg font-label-lg text-label-lg shadow-md hover:bg-primary-container transition-all transform active:scale-95 w-full" onclick="openModal()">
+<span class="material-symbols-outlined">person_add</span>
+                Tambah Pelanggan Baru
+            </button>
+</div>
+<!-- Quick Stats Bento -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-lg">
+</div>
+<!-- Table Container -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm"><div class="flex flex-col divide-y divide-outline-variant">
+<!-- Card 1 -->
+<div class="p-md bg-white flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-lg text-primary">Budi Santoso</h3>
+<p class="text-body-md text-on-surface-variant">+62 812-3456-7890</p>
+</div>
+<div class="text-right">
+<div class="flex items-center gap-1 justify-end">
+<span class="text-headline-sm font-headline-md text-primary">8</span>
+<span class="text-label-sm text-on-surface-variant">/ 10</span>
+</div>
+<div class="w-20 h-1.5 bg-surface-container rounded-full mt-1 overflow-hidden">
+<div class="h-full bg-primary" style="width: 80%;"></div>
+</div>
+</div>
+</div>
+<button class="w-full mt-2 bg-primary text-on-primary py-2 rounded-lg flex items-center justify-center gap-xs shadow-sm active:scale-95 transition-transform">
+<img alt="" class="w-5 h-5 object-contain invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHjIgR4CMjPOYDoHm52Sj5RDUAi6SmiDf429qDlG5aQqsZJJLv0DGduhlRDdV-Q5IaD5KNfzOIPMLDvg1MPbhShQ8mlB0qOFw9Zsvr1lTABvZkLXhr1bHqCeevYiRz2qppj2-fNmlYetFwkvyDiOKUX2ss8qiQWgeSJD-wUI1ERPQFfY6h4G0iHN66_2oVTB6adrUczot4movI2RhFhWXS9gVGkZD47JtRsDSUVh5YBHIaJc9OSNGCgPmzoDSLIOZGPLDtftT7zq4"/>
+<span class="font-label-lg">+ Stamp</span>
+</button>
+</div>
+<!-- Card 2 -->
+<div class="p-md bg-white flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-lg text-primary">Siti Aminah</h3>
+<p class="text-body-md text-on-surface-variant">+62 856-9876-5432</p>
+</div>
+<div class="text-right">
+<div class="flex items-center gap-1 justify-end">
+<span class="text-headline-sm font-headline-md text-secondary">10</span>
+<span class="text-label-sm text-on-surface-variant">/ 10</span>
+</div>
+<div class="w-20 h-1.5 bg-surface-container rounded-full mt-1 overflow-hidden">
+<div class="h-full bg-secondary" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<div class="w-full mt-2 py-2 rounded-lg border border-secondary text-secondary flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined">celebration</span>
+<span class="font-label-lg">Reward Ready</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-md bg-white flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-lg text-primary">Doni Pratama</h3>
+<p class="text-body-md text-on-surface-variant">+62 821-1122-3344</p>
+</div>
+<div class="text-right">
+<div class="flex items-center gap-1 justify-end">
+<span class="text-headline-sm font-headline-md text-primary">3</span>
+<span class="text-label-sm text-on-surface-variant">/ 10</span>
+</div>
+<div class="w-20 h-1.5 bg-surface-container rounded-full mt-1 overflow-hidden">
+<div class="h-full bg-primary" style="width: 30%;"></div>
+</div>
+</div>
+</div>
+<button class="w-full mt-2 bg-primary text-on-primary py-2 rounded-lg flex items-center justify-center gap-xs shadow-sm active:scale-95 transition-transform">
+<img alt="" class="w-5 h-5 object-contain invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHjIgR4CMjPOYDoHm52Sj5RDUAi6SmiDf429qDlG5aQqsZJJLv0DGduhlRDdV-Q5IaD5KNfzOIPMLDvg1MPbhShQ8mlB0qOFw9Zsvr1lTABvZkLXhr1bHqCeevYiRz2qppj2-fNmlYetFwkvyDiOKUX2ss8qiQWgeSJD-wUI1ERPQFfY6h4G0iHN66_2oVTB6adrUczot4movI2RhFhWXS9gVGkZD47JtRsDSUVh5YBHIaJc9OSNGCgPmzoDSLIOZGPLDtftT7zq4"/>
+<span class="font-label-lg">+ Stamp</span>
+</button>
+</div>
+</div>
+<div class="px-md py-sm bg-surface-container-low flex justify-between items-center border-t border-outline-variant">
+<span class="text-label-sm text-on-surface-variant">1,284 customers</span>
+<div class="flex gap-xs">
+<button class="p-1 text-primary disabled:opacity-30" disabled=""><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-1 text-primary"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div></div>
+</main>
+<!-- Modal Form: Tambah Pelanggan -->
+<div class="fixed inset-0 z-[100] hidden flex items-center justify-center p-md" id="addCustomerModal">
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-sm" onclick="closeModal()"></div>
+<div class="bg-white rounded-xl shadow-xl w-full max-w-md relative animate-in fade-in zoom-in duration-200 overflow-hidden">
+<div class="bg-primary px-md py-sm flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-primary">Tambah Pelanggan Baru</h3>
+<button class="text-on-primary/80 hover:text-on-primary" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="p-md space-y-md" onsubmit="event.preventDefault(); closeModal();">
+<div class="space-y-1">
+<label class="block font-label-lg text-label-lg text-primary" for="name">Nama Lengkap</label>
+<input class="w-full px-sm py-2 border border-outline rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" id="name" placeholder="Contoh: Andi Wijaya" required="" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="block font-label-lg text-label-lg text-primary" for="phone">Nomor Telepon</label>
+<input class="w-full px-sm py-2 border border-outline rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" id="phone" placeholder="+62 8xx-xxxx-xxxx" required="" type="tel"/>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary mt-1">info</span>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Pelanggan baru akan otomatis mendapatkan 1 stamp pertama sebagai bonus bergabung.</p>
+</div>
+<div class="flex gap-sm pt-sm">
+<button class="flex-1 py-2 font-label-lg text-label-lg border border-outline-variant text-on-surface-variant rounded-lg hover:bg-surface-container-low transition-colors" onclick="closeModal()" type="button">
+                        Batal
+                    </button>
+<button class="flex-1 py-2 font-label-lg text-label-lg bg-primary text-on-primary rounded-lg hover:bg-primary-container transition-all transform active:scale-95 shadow-md" type="submit">
+                        Simpan Data
+                    </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg py-md w-full max-w-container-max mx-auto gap-md">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">STARSSHOESWASH</span>
+</div>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+<script>
+        function openModal() {
+            document.getElementById('addCustomerModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('addCustomerModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Simple button click micro-interaction for stamp buttons
+        document.querySelectorAll('button').forEach(btn => {
+            if(btn.innerText.includes('Stamp')) {
+                btn.addEventListener('click', function() {
+                    const originalContent = this.innerHTML;
+                    this.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span>';
+                    this.classList.add('opacity-80');
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<span class="material-symbols-outlined">check_circle</span>';
+                        this.classList.remove('bg-primary');
+                        this.classList.add('bg-green-600');
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalContent;
+                            this.classList.remove('bg-green-600', 'opacity-80');
+                            this.classList.add('bg-primary');
+                        }, 1000);
+                    }, 600);
+                });
+            }
+        });
+    </script>
+</body></html>

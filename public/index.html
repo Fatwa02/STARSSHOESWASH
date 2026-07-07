@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>STARSSHOESWASH - Loyality Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-background": "#151b29", "surface-container": "#e9edff", "on-error-container": "#93000a",
+        "surface": "#faf8ff", "primary-fixed-dim": "#b8c3ff", "on-tertiary-container": "#95989b",
+        "secondary": "#bc0001", "on-secondary-container": "#fffbff", "on-secondary": "#ffffff",
+        "secondary-fixed-dim": "#ffb4a8", "on-primary": "#ffffff", "tertiary-fixed": "#e0e3e6",
+        "on-secondary-fixed": "#410000", "inverse-surface": "#2a303f", "inverse-primary": "#b8c3ff",
+        "background": "#faf8ff", "secondary-container": "#e22619", "tertiary": "#181b1e",
+        "on-tertiary-fixed-variant": "#44474a", "on-tertiary-fixed": "#191c1e", "error": "#ba1a1a",
+        "surface-container-high": "#e2e8fc", "on-error": "#ffffff", "surface-container-low": "#f1f3ff",
+        "surface-container-lowest": "#ffffff", "surface-container-highest": "#dde2f6",
+        "on-primary-container": "#8794d4", "on-tertiary": "#ffffff", "primary-fixed": "#dde1ff",
+        "on-primary-fixed": "#04154f", "outline": "#767681", "surface-bright": "#faf8ff",
+        "error-container": "#ffdad6", "inverse-on-surface": "#edf0ff", "on-primary-fixed-variant": "#36437d",
+        "primary-container": "#1d2b64", "secondary-fixed": "#ffdad4", "primary": "#03144f",
+        "on-surface": "#151b29", "surface-variant": "#dde2f6", "tertiary-fixed-dim": "#c4c7ca",
+        "surface-tint": "#4e5b96", "tertiary-container": "#2d3033", "outline-variant": "#c6c5d1",
+        "surface-dim": "#d4d9ed", "on-surface-variant": "#454650", "on-secondary-fixed-variant": "#930000"
+      },
+      borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
+      spacing: { sm: "16px", "container-max": "1200px", xs: "8px", md: "24px", base: "4px", gutter: "20px", lg: "40px", xl: "64px" },
+      fontFamily: { "headline-lg": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "headline-xl": ["Hanken Grotesk"], "body-md": ["Work Sans"], "body-lg": ["Work Sans"], "label-lg": ["Hanken Grotesk"] },
+      fontSize: { "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }], "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }], "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }] }
+    }
+  }
+}
+</script>
+<style>
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.stamp-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+@media (max-width: 640px) { .stamp-grid { grid-template-columns: repeat(2, 1fr); } }
+.stamp-active { transform: rotate(12deg); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.15), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+.custom-scrollbar::-webkit-scrollbar { width: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #03144f; border-radius: 10px; }
+.animate-fade-in { animation: fadeIn 0.3s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes subtle-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+.float-animation { animation: subtle-float 3s ease-in-out infinite; }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+
+<!-- Header -->
+<header class="bg-primary shadow-md sticky top-0 z-50">
+<div class="flex justify-between items-center px-md py-sm w-full max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-1 sm:gap-sm">
+<img alt="STARSSHOESWASH logo" class="h-8 sm:h-12 w-auto" src="/logo.jpeg" onerror="this.src='https://via.placeholder.com/48/03144f/ffffff?text=S'">
+<h1 class="text-on-primary font-headline-md text-xs sm:text-headline-md font-bold tracking-tighter truncate max-w-[120px] sm:max-w-none">STARSSHOESWASH</h1>
+</div>
+<div class="flex items-center gap-1 sm:gap-md">
+<button id="modeToggleBtn" onclick="toggleMode()" class="flex items-center gap-1 sm:gap-xs px-2 sm:px-md py-1 sm:py-sm rounded-lg text-xs sm:text-sm font-label-lg transition-all whitespace-nowrap" style="background: rgba(255,255,255,0.15); color: white;">
+<span class="material-symbols-outlined text-base sm:text-lg" id="modeIcon">admin_panel_settings</span>
+<span id="modeLabel" class="text-xs sm:text-sm">Admin</span>
+</button>
+</div>
+</div>
+</header>
+
+<main class="flex-grow">
+<!-- ===== CUSTOMER MODE ===== -->
+<div id="customerMode">
+<section class="bg-primary py-xl px-md text-center">
+<div class="max-w-2xl mx-auto space-y-md">
+<h2 class="text-on-primary font-headline-xl text-headline-xl">Cari Status Loyality Card Anda</h2>
+<p class="text-primary-fixed-dim font-body-lg text-body-lg opacity-90">Masukkan nama anda untuk melihat progress stamp dan reward yang tersedia.</p>
+<div class="relative max-w-md mx-auto mt-lg">
+<div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">person_search</span>
+</div>
+<input id="searchInput" class="w-full pl-xl pr-md py-md bg-white border-none rounded-lg text-primary focus:ring-4 focus:ring-secondary/20 shadow-lg text-body-lg font-body-md transition-all" placeholder="Cari nama Anda..." type="text" onkeydown="if(event.key==='Enter') searchCustomer()">
+<button id="searchBtn" onclick="searchCustomer()" class="absolute right-xs top-xs bottom-xs px-md bg-primary text-white font-label-lg rounded hover:bg-primary-container transition-colors active:scale-95 duration-150">Cari</button>
+</div>
+</div>
+</section>
+
+<section id="loyalityCardSection" class="max-w-container-max mx-auto px-md py-xl hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<div class="lg:col-span-5 space-y-md">
+<div class="bg-white border border-primary/10 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="bg-primary p-md flex justify-between items-center text-white">
+<span class="font-headline-md text-headline-md tracking-widest uppercase">LOYALiTY CARD</span>
+<img alt="Logo" class="h-8 brightness-0 invert opacity-50 group-hover:opacity-100 transition-opacity" src="/logo.jpeg" onerror="this.style.display='none'">
+</div>
+<div class="p-lg space-y-lg relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[160px]">stars</span>
+</div>
+<div class="space-y-xs">
+<label class="text-outline font-label-sm text-label-sm uppercase tracking-tighter">Nama</label>
+<p id="customerName" class="text-primary font-headline-md text-headline-md">-</p>
+</div>
+<div class="flex justify-between items-end">
+<div class="space-y-xs">
+<label class="text-outline font-label-sm text-label-sm uppercase tracking-tighter">Telepon</label>
+<p id="customerPhone" class="text-primary font-body-md text-body-md">-</p>
+</div>
+<div class="text-right">
+<p class="text-headline-lg font-headline-lg text-primary" id="customerStampCount">0</p>
+<p class="text-outline font-label-sm text-label-sm uppercase">/ 10 STAMPS</p>
+</div>
+</div>
+</div>
+<div class="h-2 bg-secondary w-full"></div>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant/30">
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Panduan Loyality</h3>
+<p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">Kumpulkan stamp setiap kali Anda menggunakan jasa pencucian kami. Reward yang sudah di dapatkan berwarna merah. Dapatkan diskon langsung dan layanan gratis sebagai apresiasi atas kepercayaan anda pada starsshoeswash.</p>
+</div>
+</div>
+<div class="lg:col-span-7 space-y-md">
+<div class="bg-white border border-primary/10 rounded-xl p-lg shadow-sm">
+<div class="flex justify-between items-center mb-lg">
+<div>
+<h2 class="text-primary font-headline-lg text-headline-lg">Progress Stamp Anda</h2>
+</div>
+</div>
+<div id="stampGrid" class="stamp-grid mb-xl"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="noResultSection" class="max-w-container-max mx-auto px-md py-xl hidden">
+<div class="text-center py-xl">
+<span class="material-symbols-outlined text-6xl text-outline mb-md">search_off</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-sm">Customer Tidak Ditemukan</h3>
+<p class="text-on-surface-variant font-body-md">Nama yang Anda cari tidak terdaftar. Silakan hubungi admin STARSSHOESWASH.</p>
+</div>
+</section>
+</div>
+
+<!-- ===== ADMIN MODE ===== -->
+<div id="adminMode" class="hidden">
+<section class="bg-primary py-md px-md text-center">
+<div class="max-w-2xl mx-auto">
+<h2 class="text-on-primary font-headline-lg text-headline-lg">Admin Dashboard</h2>
+<p class="text-primary-fixed-dim font-body-md opacity-80">Kelola data pelanggan dan stamp loyality</p>
+</div>
+</section>
+
+<section class="max-w-container-max mx-auto px-sm md:px-md py-md my-8">
+<div id="adminLogin" class="max-w-sm mx-auto bg-white border border-outline-variant rounded-xl p-lg shadow-sm">
+<div class="text-center mb-md">
+<span class="material-symbols-outlined text-5xl text-primary">lock</span>
+<h3 class="font-headline-md text-headline-md text-primary mt-sm">Masuk ke Admin</h3>
+<p class="text-on-surface-variant font-body-md">Masukkan password untuk mengakses panel admin.</p>
+</div>
+<div class="space-y-md">
+<div class="space-y-1">
+<label class="block font-label-lg text-label-lg text-primary">Password</label>
+<input id="adminPassword" type="password" class="w-full px-sm py-2 border border-outline rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" placeholder="Masukkan password" onkeydown="if(event.key==='Enter') verifyAdmin()">
+</div>
+<button onclick="verifyAdmin()" class="w-full py-2 bg-primary text-on-primary font-label-lg text-label-lg rounded-lg hover:bg-primary-container transition-all active:scale-95 shadow-md">Masuk</button>
+<p id="adminError" class="text-error font-label-sm text-label-sm text-center hidden">Password salah. Coba lagi.</p>
+</div>
+</div>
+
+<div id="adminPanel" class="hidden">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-lg gap-sm">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Customer Registry</h2>
+<p class="text-on-surface-variant font-body-md">Manage loyality stamps and track customer progress.</p>
+</div>
+<div class="flex items-center gap-sm">
+<div class="bg-white border border-outline-variant p-sm rounded-lg flex items-center gap-sm shadow-sm h-12">
+<div class="w-8 h-8 bg-surface-container-low rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-sm">groups</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[10px] font-label-sm text-on-surface-variant uppercase tracking-wider leading-none">Total Customers</p>
+<p id="totalCustomers" class="text-label-lg font-bold text-primary leading-none">0</p>
+</div>
+</div>
+<button onclick="openAddModal()" class="flex items-center justify-center gap-xs bg-primary text-on-primary px-md py-sm rounded-lg font-label-lg text-label-lg shadow-md hover:bg-primary-container transition-all transform active:scale-95">
+<span class="material-symbols-outlined">person_add</span> Tambah Pelanggan
+</button>
+</div>
+</div>
+
+<div class="relative max-w-md mb-md">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline">search</span>
+<input id="adminSearchInput" class="w-full pl-[44px] pr-sm py-2 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Cari customer..." oninput="filterCustomerTable(this.value)">
+</div>
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse sm:table-auto table-fixed">
+<thead class="bg-primary text-on-primary">
+<tr>
+<th class="px-md py-sm font-label-lg text-label-lg uppercase tracking-wider border-b border-primary-container">Nama</th>
+<th class="px-md py-sm font-label-lg text-label-lg uppercase tracking-wider border-b border-primary-container hidden md:table-cell">Nomor Telepon</th>
+<th class="px-md py-sm font-label-lg text-label-lg uppercase tracking-wider border-b border-primary-container">Jumlah Stamp</th>
+<th class="px-md py-sm font-label-lg text-label-lg uppercase tracking-wider border-b border-primary-container text-right">Aksi</th>
+</tr>
+</thead>
+<tbody id="customerTableBody" class="divide-y divide-outline-variant">
+</tbody>
+</table>
+</div>
+<div class="px-md py-sm bg-surface-container-low flex justify-between items-center border-t border-outline-variant">
+<span id="paginationInfo" class="text-label-sm font-label-sm text-on-surface-variant">Showing 0 of 0 customers</span>
+<div class="flex gap-xs items-center">
+<button id="prevPageBtn" onclick="prevPage()" class="p-1 hover:bg-surface-container rounded transition-colors text-primary disabled:opacity-30" disabled>
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<span id="pageIndicator" class="text-sm text-on-surface-variant px-1">1 / 1</span>
+<button id="nextPageBtn" onclick="nextPage()" class="p-1 hover:bg-surface-container rounded transition-colors text-primary disabled:opacity-30" disabled>
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<!-- Modal: Tambah Pelanggan -->
+<div class="fixed inset-0 z-[100] hidden flex items-center justify-center p-md" id="addCustomerModal">
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-sm" onclick="closeAddModal()"></div>
+<div class="bg-white rounded-xl shadow-xl w-full max-w-md relative animate-fade-in overflow-hidden">
+<div class="bg-primary px-md py-sm flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-primary">Tambah Pelanggan Baru</h3>
+<button class="text-on-primary/80 hover:text-on-primary" onclick="closeAddModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="p-md space-y-md" id="addCustomerForm">
+<div class="space-y-1">
+<label class="block font-label-lg text-label-lg text-primary" for="name">Nama Lengkap</label>
+<input class="w-full px-sm py-2 border border-outline rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" id="name" placeholder="Contoh: Andi Wijaya" required type="text">
+</div>
+<div class="space-y-1">
+<label class="block font-label-lg text-label-lg text-primary" for="phone">Nomor Telepon</label>
+<input class="w-full px-sm py-2 border border-outline rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" id="phone" placeholder="+62 8xx-xxxx-xxxx" required type="tel">
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary mt-1">info</span>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Pelanggan baru akan otomatis mendapatkan 1 stamp pertama sebagai bonus bergabung.</p>
+</div>
+<div class="flex gap-sm pt-sm">
+<button class="flex-1 py-2 font-label-lg text-label-lg border border-outline-variant text-on-surface-variant rounded-lg hover:bg-surface-container-low transition-colors" onclick="closeAddModal()" type="button">Batal</button>
+<button class="flex-1 py-2 font-label-lg text-label-lg bg-primary text-on-primary rounded-lg hover:bg-primary-container transition-all transform active:scale-95 shadow-md" type="submit">Simpan Data</button>
+</div>
+</form>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant mt-xl">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg py-md w-full max-w-container-max mx-auto gap-md">
+<div class="text-center md:text-left">
+<h2 class="font-headline-sm text-headline-md font-bold text-primary">STARSSHOESWASH</h2>
+</div>
+<div class="flex gap-md">
+</div>
+<div class="flex items-center gap-sm">
+<a href="https://wa.me/628889023291" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-md">call</span>
+</a>
+<a href="https://www.instagram.com/starsshoeswash?igsh=MXJ5Y25zZDNxZHBqdQ==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-md">photo_camera</span>
+</a>
+</div>
+</div>
+</footer>
+
+<script>
+let isAdminMode = false;
+let customers = [];
+let currentCustomer = null;
+let currentPage = 1;
+const pageSize = 10;
+let filteredCustomers = [];
+
+const MILESTONES = {
+  2: { type: 'discount', label: 'Discount', value: '5%' },
+  4: { type: 'parfume', label: 'FREE', value: 'PARFUME' },
+  6: { type: 'discount', label: 'Discount', value: '5%' },
+  9: { type: 'wash', label: 'FREE', value: 'WASH' }
+};
+
+async function api(url, options = {}) {
+  try {
+    const res = await fetch(url, { headers: { 'Content-Type': 'application/json' }, ...options });
+    return await res.json();
+  } catch (e) {
+    console.error('API error:', e);
+    return null;
+  }
+}
+
+function toggleMode() {
+  isAdminMode = !isAdminMode;
+  document.getElementById('customerMode').classList.toggle('hidden', isAdminMode);
+  document.getElementById('adminMode').classList.toggle('hidden', !isAdminMode);
+  document.getElementById('modeIcon').textContent = isAdminMode ? 'group' : 'admin_panel_settings';
+  document.getElementById('modeLabel').textContent = isAdminMode ? 'Customer' : 'Admin';
+  if (isAdminMode) {
+    document.getElementById('adminLogin').classList.remove('hidden');
+    document.getElementById('adminPanel').classList.add('hidden');
+    document.getElementById('adminPassword').value = '';
+    document.getElementById('adminError').classList.add('hidden');
+  }
+}
+
+async function verifyAdmin() {
+  const password = document.getElementById('adminPassword').value;
+  const res = await api('/api/admin/verify', { method: 'POST', body: JSON.stringify({ password }) });
+  if (res && res.success) {
+    document.getElementById('adminLogin').classList.add('hidden');
+    document.getElementById('adminPanel').classList.remove('hidden');
+    document.getElementById('adminError').classList.add('hidden');
+    loadCustomers();
+  } else {
+    document.getElementById('adminError').classList.remove('hidden');
+  }
+}
+
+async function searchCustomer() {
+  const q = document.getElementById('searchInput').value.trim();
+  if (!q) {
+    document.getElementById('searchInput').classList.add('ring-2', 'ring-error');
+    setTimeout(() => document.getElementById('searchInput').classList.remove('ring-2', 'ring-error'), 1000);
+    return;
+  }
+  const btn = document.getElementById('searchBtn');
+  btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-lg">sync</span>';
+  const data = await api('/api/customers/search?q=' + encodeURIComponent(q));
+  btn.innerHTML = 'Cari';
+  if (data && data.id) {
+    currentCustomer = data;
+    document.getElementById('loyalityCardSection').classList.remove('hidden');
+    document.getElementById('noResultSection').classList.add('hidden');
+    renderCustomerCard(data);
+  } else {
+    document.getElementById('loyalityCardSection').classList.add('hidden');
+    document.getElementById('noResultSection').classList.remove('hidden');
+  }
+}
+
+function renderCustomerCard(customer) {
+  document.getElementById('customerName').textContent = customer.name;
+  document.getElementById('customerPhone').textContent = customer.phone;
+  document.getElementById('customerStampCount').textContent = customer.stamps;
+  renderStampGrid(customer.stamps);
+}
+
+function renderStampGrid(stamps) {
+  const grid = document.getElementById('stampGrid');
+  grid.innerHTML = '';
+  for (let i = 0; i < 10; i++) {
+    const slot = document.createElement('div');
+    const filled = i < stamps;
+    const milestone = MILESTONES[i];
+    
+    if (milestone) {
+      if (filled) {
+        slot.className = 'aspect-square rounded-full border-2 border-primary bg-secondary flex flex-col items-center justify-center text-white text-center p-xs stamp-active transition-transform hover:scale-105';
+        const label = document.createElement('span');
+        label.className = 'font-label-sm text-[10px] leading-none uppercase';
+        label.textContent = milestone.label;
+        const val = document.createElement('span');
+        if (milestone.type === 'discount') {
+          val.className = 'font-headline-md text-headline-md';
+          val.textContent = milestone.value;
+        } else {
+          val.className = 'font-label-lg text-label-lg font-bold';
+          val.textContent = milestone.value;
+        }
+        slot.appendChild(label);
+        slot.appendChild(val);
+      } else {
+        slot.className = 'aspect-square rounded-full border-2 border-primary/20 bg-surface-container-lowest flex flex-col items-center justify-center text-outline text-center p-xs shadow-inner';
+        const label = document.createElement('span');
+        label.className = 'font-label-sm text-[10px] leading-none uppercase';
+        label.textContent = milestone.label;
+        const val = document.createElement('span');
+        val.className = 'font-label-lg text-label-lg font-bold';
+        val.textContent = milestone.value;
+        slot.appendChild(label);
+        slot.appendChild(val);
+      }
+    } else {
+      if (filled) {
+        slot.className = 'aspect-square rounded-full border-2 border-primary bg-white flex items-center justify-center stamp-active transition-transform hover:scale-105';
+        const img = document.createElement('img');
+        img.className = 'w-12 h-12 sm:w-14 sm:h-14 object-contain';
+        img.src = '/logo.jpeg';
+        img.alt = 'stamp';
+        img.onerror = function() { this.outerHTML = '<span class="material-symbols-outlined text-4xl text-primary">stars</span>'; };
+        slot.appendChild(img);
+      } else {
+        slot.className = 'aspect-square rounded-full border-2 border-primary/20 bg-surface-container-lowest flex items-center justify-center text-primary/10 shadow-inner';
+        const dot = document.createElement('div');
+        dot.className = 'w-3 h-3 rounded-full bg-primary/20';
+        slot.appendChild(dot);
+      }
+    }
+    grid.appendChild(slot);
+  }
+}
+
+async function loadCustomers() {
+  const data = await api('/api/customers');
+  if (data) {
+    customers = data;
+    currentPage = 1;
+    applyFilters();
+  }
+}
+
+function renderCustomerTable() {
+  const tbody = document.getElementById('customerTableBody');
+  const totalPages = Math.ceil(filteredCustomers.length / pageSize) || 1;
+  const start = (currentPage - 1) * pageSize;
+  const end = start + pageSize;
+  const pageData = filteredCustomers.slice(start, end);
+
+  document.getElementById('totalCustomers').textContent = customers.length;
+  tbody.innerHTML = '';
+
+  pageData.forEach(c => {
+    const tr = document.createElement('tr');
+    tr.className = 'hover:bg-surface-container-low transition-colors group';
+    const pct = Math.min((c.stamps / 10) * 100, 100);
+    const isFull = c.stamps >= 10;
+    tr.innerHTML = `
+      <td class="px-md py-md font-label-lg text-primary truncate max-w-[120px] sm:max-w-none">${c.name}</td>
+      <td class="px-md py-md font-body-md text-on-surface-variant hidden md:table-cell">${c.phone}</td>
+      <td class="px-md py-md">
+        <div class="flex items-center gap-1">
+          <span class="text-headline-md font-headline-md ${isFull ? 'text-secondary' : 'text-primary'}">${c.stamps}</span>
+          <span class="text-label-sm font-label-sm text-on-surface-variant">/ 10</span>
+        </div>
+        <div class="w-24 h-2 bg-surface-container rounded-full mt-2 overflow-hidden">
+          <div class="h-full ${isFull ? 'bg-secondary' : 'bg-primary'}" style="width: ${pct}%;"></div>
+        </div>
+      </td>
+      <td class="px-md py-md text-right whitespace-nowrap">
+        <div class="flex items-center justify-end gap-xs">
+          ${isFull ? `
+            <button onclick="resetStamp(${c.id})" class="bg-secondary text-on-secondary p-2 rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-sm flex items-center gap-xs" title="Reward sudah siap! Reset stamp">
+              <span class="material-symbols-outlined text-sm">celebration</span>
+              <span class="font-label-lg text-label-lg hidden md:inline">Klaim Reward</span>
+            </button>
+          ` : c.stamps < 10 ? `
+            <button onclick="addStamp(${c.id})" class="bg-white text-primary border-2 border-primary p-2 rounded-lg hover:bg-surface-container-low active:scale-95 transition-all shadow-sm flex items-center gap-xs">
+              <img alt="Logo" class="w-5 h-5 object-contain" src="/logo.jpeg" onerror="this.style.display='none'">
+              <span class="font-label-lg text-label-lg hidden md:inline">Stamp</span>
+            </button>
+          ` : ''}
+          <button onclick="deleteCustomer(${c.id}, '${c.name}')" class="p-2 rounded-lg hover:bg-error-container text-outline hover:text-error active:scale-95 transition-all" title="Hapus">
+            <span class="material-symbols-outlined text-sm">delete</span>
+          </button>
+        </div>
+      </td>`;
+    tbody.appendChild(tr);
+  });
+
+  updatePagination(totalPages);
+}
+
+async function addStamp(id) {
+  const res = await api(`/api/customers/${id}/stamp`, { method: 'POST' });
+  if (res && res.id) {
+    if (res.stamps >= 10) {
+      showToast(`${res.name} telah mencapai 10 stamp! Reward siap diklaim.`, 'success');
+    } else {
+      showToast(`Stamp berhasil ditambahkan untuk ${res.name}`, 'success');
+    }
+    loadCustomers();
+    if (currentCustomer && currentCustomer.id === id) {
+      currentCustomer = res;
+      renderCustomerCard(res);
+    }
+  } else if (res && res.error) {
+    showToast(res.error, 'error');
+  }
+}
+
+async function resetStamp(id) {
+  if (!confirm('Klaim reward dan reset stamp ke 0?')) return;
+  const res = await api(`/api/customers/${id}/reset`, { method: 'POST' });
+  if (res && res.id) {
+    showToast(`Reward terklaim! Stamp ${res.name} direset ke 0.`, 'success');
+    loadCustomers();
+    if (currentCustomer && currentCustomer.id === id) {
+      currentCustomer = res;
+      renderCustomerCard(res);
+    }
+  }
+}
+
+async function deleteCustomer(id, name) {
+  if (!confirm(`Hapus ${name} dari registry?`)) return;
+  const res = await api(`/api/customers/${id}`, { method: 'DELETE' });
+  if (res && res.success) {
+    showToast(`${name} berhasil dihapus`, 'success');
+    loadCustomers();
+  }
+}
+
+function filterCustomerTable(q) {
+  const lowerQ = q.toLowerCase();
+  filteredCustomers = customers.filter(c =>
+    c.name.toLowerCase().includes(lowerQ)
+  );
+  currentPage = 1;
+  renderCustomerTable();
+}
+
+function applyFilters() {
+  const searchVal = document.getElementById('adminSearchInput')?.value?.toLowerCase() || '';
+  filteredCustomers = customers.filter(c =>
+    c.name.toLowerCase().includes(searchVal)
+  );
+  currentPage = 1;
+  renderCustomerTable();
+}
+
+function updatePagination(totalPages) {
+  const total = filteredCustomers.length;
+  if (total === 0) {
+    document.getElementById('paginationInfo').textContent = 'Showing 0 of 0 customers';
+  } else {
+    const from = (currentPage - 1) * pageSize + 1;
+    const to = Math.min(currentPage * pageSize, total);
+    document.getElementById('paginationInfo').textContent = `Showing ${from}-${to} of ${total} customers`;
+  }
+  document.getElementById('pageIndicator').textContent = `${currentPage} / ${totalPages}`;
+  document.getElementById('prevPageBtn').disabled = currentPage <= 1;
+  document.getElementById('nextPageBtn').disabled = currentPage >= totalPages;
+}
+
+function prevPage() {
+  if (currentPage > 1) { currentPage--; renderCustomerTable(); }
+}
+
+function nextPage() {
+  const totalPages = Math.ceil(filteredCustomers.length / pageSize) || 1;
+  if (currentPage < totalPages) { currentPage++; renderCustomerTable(); }
+}
+
+function openAddModal() {
+  document.getElementById('addCustomerModal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAddModal() {
+  document.getElementById('addCustomerModal').classList.add('hidden');
+  document.body.style.overflow = 'auto';
+}
+
+document.getElementById('addCustomerForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  if (!name || !phone) return;
+  const res = await api('/api/customers', { method: 'POST', body: JSON.stringify({ name, phone }) });
+  if (res && res.id) {
+    showToast(`Pelanggan ${name} berhasil ditambahkan!`, 'success');
+    closeAddModal();
+    document.getElementById('addCustomerForm').reset();
+    loadCustomers();
+  }
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeAddModal();
+});
+
+function showToast(message, type = 'success') {
+  const existing = document.querySelector('.toast-notification');
+  if (existing) existing.remove();
+  const toast = document.createElement('div');
+  toast.className = 'toast-notification fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] px-md py-sm rounded-lg shadow-lg font-label-lg text-label-lg animate-fade-in ' + 
+    (type === 'success' ? 'bg-primary text-on-primary' : 'bg-error text-on-error');
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity 0.3s'; setTimeout(() => toast.remove(), 300); }, 2500);
+}
+
+// Init: search on enter key
+document.getElementById('searchInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') searchCustomer();
+});
+</script>
+</body>
+</html>
