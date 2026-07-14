@@ -296,7 +296,7 @@ let filteredCustomers = [];
 
 const MILESTONES = {
   2: { type: 'discount', label: 'Discount', value: '5%' },
-  4: { type: 'parfume', label: 'Discount', value: '5%' },
+  4: { type: 'discount', label: 'Discount', value: '5%' },
   6: { type: 'discount', label: 'Discount', value: '5%' },
   9: { type: 'wash', label: 'FREE', value: 'WASH' }
 };
@@ -386,7 +386,7 @@ function renderStampGrid(stamps) {
           val.className = 'font-headline-md text-headline-md';
           val.textContent = milestone.value;
         } else {
-          val.className = 'font-label-lg text-label-lg font-bold';
+          val.className = 'font-headline-md text-headline-md font-bold';
           val.textContent = milestone.value;
         }
         slot.appendChild(label);
@@ -397,7 +397,7 @@ function renderStampGrid(stamps) {
         label.className = 'font-label-sm text-[10px] leading-none uppercase';
         label.textContent = milestone.label;
         const val = document.createElement('span');
-        val.className = 'font-label-lg text-label-lg font-bold';
+        val.className = 'font-headline-md text-headline-md font-bold';
         val.textContent = milestone.value;
         slot.appendChild(label);
         slot.appendChild(val);
